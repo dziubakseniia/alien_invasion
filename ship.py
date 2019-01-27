@@ -1,13 +1,15 @@
 import pygame
+from pygame.sprite import Sprite
 
 
-class Ship:
+class Ship(Sprite):
 
     def __init__(self, settings,  screen):
+        super(Ship, self).__init__()
         self.screen = screen
 
         self.image = pygame.image.load('images/rocket.png')
-        self.image = pygame.transform.scale(self.image, (75, 90))
+        self.image = pygame.transform.scale(self.image, (45, 60))
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
 
